@@ -1,0 +1,38 @@
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-03-12 01:53:11 +0800 cap devops base:shell
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading files/test.txt 0.0%
+  INFO Uploading files/test.txt 100.0%
+  INFO [c337e01a] Running echo 'test' >>/tmp/test.txt on 192.168.33.110
+ DEBUG [c337e01a] Command: echo 'test' >>/tmp/test.txt
+  INFO [c337e01a] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG Downloading test.txt 0.0%
+  INFO Downloading test.txt 100.0%
+  INFO [77db6cc5] Running systemctl start nginx on 192.168.33.110
+ DEBUG [77db6cc5] Command: systemctl start nginx
+  INFO [77db6cc5] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [1fac72a0] Running systemctl status nginx on 192.168.33.110
+ DEBUG [1fac72a0] Command: systemctl status nginx
+ DEBUG [1fac72a0] 	● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Fri 2021-03-12 01:48:01 HKT; 5min ago
+  Process: 24410 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 24408 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 24407 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 24412 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─24412 nginx: master process /usr/sbin/ngin
+           └─24413 nginx: worker proces
+
+Mar 12 01:48:01 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Mar 12 01:48:01 localhost.localdomain nginx[24408]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Mar 12 01:48:01 localhost.localdomain nginx[24408]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Mar 12 01:48:01 localhost.localdomain systemd[1]: Failed to parse PID from file /run/nginx.pid: Invalid argument
+Mar 12 01:48:01 localhost.localdomain systemd[1]: Started The nginx HTTP and reverse proxy server.
+  INFO [1fac72a0] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [e4dc2670] Running /usr/bin/env uptime on 192.168.33.110
+ DEBUG [e4dc2670] Command: /usr/bin/env uptime
+ DEBUG [e4dc2670] 	 01:53:12 up  1:44,  1 user,  load average: 0.00, 0.01, 0.05
+ DEBUG [e4dc2670] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO Host 192.168.33.110 (devops):	01:53:12 up  1:44,  1 user,  load average: 0.00, 0.01, 0.05
+ ERROR test error!
