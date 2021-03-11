@@ -17,4 +17,5 @@ task :push do
     git commit -m "update."
     git push -u origin main
   EOF
+  system 'open https://github.com/kevin197011/cap'
 end
