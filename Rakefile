@@ -1,21 +1,16 @@
-# frozen_string_literal: true
+# Copyright (c) 2023 kk
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
 
-desc 'run task'
-task :run do
-  sh 'cap devops base:shell'
-end
-
-desc 'fmt task'
-task :fmt do
-  sh 'rubocop -A'
+desc 'default task'
+task :default do
+  sh 'cap devops devops:doDeploy'
 end
 
 desc 'push task'
 task :push do
-  sh <<~EOF
-    git add .
-    git commit -m "update."
-    git push -u origin main
-  EOF
-  system 'open https://github.com/kevin197011/cap'
+  sh 'git add .'
+  sh 'git commit -m "update."'
+  sh 'git push -u origin main'
 end
