@@ -3,7 +3,6 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-
 role :app, %w[192.168.56.11]
 
 set :ssh_options, {

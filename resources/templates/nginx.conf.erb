@@ -1,0 +1,11 @@
+<% <%= app_name %> = 'console.devops.io' %>
+
+server {
+  listen 80;
+  server_name <%= app_name %>;
+  access_log logs/<%= app_name %>.access.log main;
+
+  location / {
+    proxy_pass http://app_name_upstream;
+  }
+}
